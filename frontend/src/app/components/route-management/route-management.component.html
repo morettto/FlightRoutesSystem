@@ -1,0 +1,110 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Route Management</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="routeForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <mat-form-field>
+          <mat-label>Origin</mat-label>
+          <mat-select formControlName="origin" (selectionChange)="updateDestinations()">
+            <mat-option *ngFor="let airport of availableOrigins" [value]="airport">
+              {{airport.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Destination</mat-label>
+          <mat-select formControlName="destination" (selectionChange)="updateOrigins()">
+            <mat-option *ngFor="let airport of availableDestinations" [value]="airport">
+              {{airport.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Price ($)</mat-label>
+          <input matInput type="number" formControlName="price" min="1">
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field>
+          <mat-label>Add Connection</mat-label>
+          <mat-select formControlName="connection">
+            <mat-option *ngFor="let airport of availableConnections" [value]="airport">
+              {{airport.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="button"
+                [disabled]="!routeForm.get('connection')?.value"
+                (click)="addConnection()">
+          Add Connection
+        </button>
+      </div>
+
+      <div class="connections-list" *ngIf="selectedConnections.length > 0">
+        <mat-chip-set>
+          <mat-chip *ngFor="let connection of selectedConnections" (removed)="removeConnection(connection)">
+            {{connection.name}}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+        </mat-chip-set>
+      </div>
+
+      <button mat-raised-button color="primary" type="submit"
+              [disabled]="!routeForm.valid">
+        {{editMode ? 'Save Edit' : 'Add Route'}}
+      </button>
+    </form>
+
+    <mat-table [dataSource]="routes" class="mat-elevation-z8">
+      <ng-container matColumnDef="origin">
+        <mat-header-cell *matHeaderCellDef> Origin </mat-header-cell>
+        <mat-cell *matCellDef="let route"> {{route.origin.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="destination">
+        <mat-header-cell *matHeaderCellDef> Destination </mat-header-cell>
+        <mat-cell *matCellDef="let route"> {{route.destiny.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+        <mat-cell *matCellDef="let route"> ${{route.price}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="connections">
+        <mat-header-cell *matHeaderCellDef> Connections </mat-header-cell>
+        <mat-cell *matCellDef="let route">
+          <mat-chip-set>
+            <mat-chip *ngFor="let connection of route.connections">
+              {{connection.airport.name}}
+            </mat-chip>
+          </mat-chip-set>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let route">
+          <button mat-icon-button color="primary" (click)="editRoute(route)" matTooltip="Edit route">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteRoute(route)" matTooltip="Delete route">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </mat-card-content>
+</mat-card>

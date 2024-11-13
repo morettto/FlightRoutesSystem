@@ -1,0 +1,34 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Airport Management</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="airportForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <mat-form-field>
+          <mat-label>Airport Code</mat-label>
+          <input matInput formControlName="code" placeholder="XXX">
+          <mat-error *ngIf="airportForm.get('code')?.hasError('pattern')">
+            Must be 3 uppercase letters
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit"
+                [disabled]="!airportForm.valid">
+          Add Airport
+        </button>
+      </div>
+    </form>
+
+    <mat-table [dataSource]="airports" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Airport Code </mat-header-cell>
+        <mat-cell *matCellDef="let airport"> {{airport.name}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </mat-card-content>
+</mat-card>

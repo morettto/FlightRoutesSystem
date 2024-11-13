@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35325.158
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightRoutesSystem.Api", "FlightRoutesSystem.Api\FlightRoutesSystem.Api.csproj", "{92776A1E-5067-44B5-8626-581B004B67E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Api Layer", "1.Api Layer", "{58401713-4759-49AF-9DDF-6C4B09375605}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Application Layer", "2.Application Layer", "{1EF16BB9-8259-41DE-AF48-D11B9005E815}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightRoutesSystem.Application", "FlightRoutesSystem.Application\FlightRoutesSystem.Application.csproj", "{06480780-EC0D-4C15-9B4A-9D6E289FC271}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Domain Layer", "3.Domain Layer", "{EB67D9C1-1AB5-4982-8B1E-B1F3BCA3F081}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightRoutesSystem.Domain", "FlightRoutesSystem.Domain\FlightRoutesSystem.Domain.csproj", "{B4F1F71D-97DA-44B8-93BD-11495DBFA2D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Data Access", "4.Data Access", "{91BCACE9-DD94-4349-8039-82914D3F0D1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightRoutesSystem.DataAccess", "FlightRoutesSystem.DataAccess\FlightRoutesSystem.DataAccess.csproj", "{20D6FCF4-355C-45A0-A266-D8FBF8AC3AF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Tests Layer", "5.Tests Layer", "{8E8B83C0-F4EF-4B99-9857-D330BDC05FAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightRoutesSystem.Tests", "FlightRoutesSystem.Tests\FlightRoutesSystem.Tests.csproj", "{2B85AD6E-A053-4556-BABC-3A476DD4D145}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightRoutesSystem.Mapper", "FlightRoutesSystem.Mapper\FlightRoutesSystem.Mapper.csproj", "{412CD471-FB21-4735-ACAF-056306CC75BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightRoutesSystem.Validation", "FlightRoutesSystem.Validation\FlightRoutesSystem.Validation.csproj", "{51B3EB4E-51BC-46EF-9865-2C46158EC619}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92776A1E-5067-44B5-8626-581B004B67E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92776A1E-5067-44B5-8626-581B004B67E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92776A1E-5067-44B5-8626-581B004B67E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92776A1E-5067-44B5-8626-581B004B67E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06480780-EC0D-4C15-9B4A-9D6E289FC271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06480780-EC0D-4C15-9B4A-9D6E289FC271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06480780-EC0D-4C15-9B4A-9D6E289FC271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06480780-EC0D-4C15-9B4A-9D6E289FC271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4F1F71D-97DA-44B8-93BD-11495DBFA2D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F1F71D-97DA-44B8-93BD-11495DBFA2D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F1F71D-97DA-44B8-93BD-11495DBFA2D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F1F71D-97DA-44B8-93BD-11495DBFA2D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20D6FCF4-355C-45A0-A266-D8FBF8AC3AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20D6FCF4-355C-45A0-A266-D8FBF8AC3AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20D6FCF4-355C-45A0-A266-D8FBF8AC3AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20D6FCF4-355C-45A0-A266-D8FBF8AC3AF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B85AD6E-A053-4556-BABC-3A476DD4D145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B85AD6E-A053-4556-BABC-3A476DD4D145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B85AD6E-A053-4556-BABC-3A476DD4D145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B85AD6E-A053-4556-BABC-3A476DD4D145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{412CD471-FB21-4735-ACAF-056306CC75BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412CD471-FB21-4735-ACAF-056306CC75BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412CD471-FB21-4735-ACAF-056306CC75BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412CD471-FB21-4735-ACAF-056306CC75BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B3EB4E-51BC-46EF-9865-2C46158EC619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B3EB4E-51BC-46EF-9865-2C46158EC619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B3EB4E-51BC-46EF-9865-2C46158EC619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B3EB4E-51BC-46EF-9865-2C46158EC619}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{92776A1E-5067-44B5-8626-581B004B67E1} = {58401713-4759-49AF-9DDF-6C4B09375605}
+		{06480780-EC0D-4C15-9B4A-9D6E289FC271} = {1EF16BB9-8259-41DE-AF48-D11B9005E815}
+		{B4F1F71D-97DA-44B8-93BD-11495DBFA2D1} = {EB67D9C1-1AB5-4982-8B1E-B1F3BCA3F081}
+		{20D6FCF4-355C-45A0-A266-D8FBF8AC3AF1} = {91BCACE9-DD94-4349-8039-82914D3F0D1C}
+		{2B85AD6E-A053-4556-BABC-3A476DD4D145} = {8E8B83C0-F4EF-4B99-9857-D330BDC05FAA}
+		{412CD471-FB21-4735-ACAF-056306CC75BF} = {1EF16BB9-8259-41DE-AF48-D11B9005E815}
+		{51B3EB4E-51BC-46EF-9865-2C46158EC619} = {1EF16BB9-8259-41DE-AF48-D11B9005E815}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A976BE6-3027-4D4F-B6F7-E36B0C716979}
+	EndGlobalSection
+EndGlobal

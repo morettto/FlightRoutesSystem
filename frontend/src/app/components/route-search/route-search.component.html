@@ -1,0 +1,65 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Search Cheapest Route</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <mat-form-field>
+          <mat-label>Origin</mat-label>
+          <mat-select formControlName="origin" (selectionChange)="updateDestinations()">
+            <mat-option *ngFor="let airport of availableOrigins" [value]="airport">
+              {{airport.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Destination</mat-label>
+          <mat-select formControlName="destination" (selectionChange)="updateOrigins()">
+            <mat-option *ngFor="let airport of availableDestinations" [value]="airport">
+              {{airport.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit"
+                [disabled]="!searchForm.valid">
+          Search Cheapest Route
+        </button>
+      </div>
+    </form>
+
+    <div *ngIf="cheapestRoute" class="route-result">
+      <h3>Cheapest Route Found:</h3>
+      <mat-card>
+        <mat-card-content>
+          <p><strong>Origin:</strong> {{cheapestRoute.origin.name}}</p>
+          <p><strong>Destination:</strong> {{cheapestRoute.destiny.name}}</p>
+          <p><strong>Price:</strong> ${{cheapestRoute.price}}</p>
+          <div *ngIf="cheapestRoute.connections.length > 0">
+            <p><strong>Connections:</strong></p>
+            <mat-chip-set>
+              <mat-chip *ngFor="let connection of cheapestRoute.connections">
+                {{connection.airport.name}}
+              </mat-chip>
+            </mat-chip-set>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div *ngIf="notFound" class="no-route-message">
+      <mat-card>
+        <mat-card-content>
+          <div class="no-route-content">
+            <mat-icon>info</mat-icon>
+            <p>No routes found between <strong>{{originName}}</strong> and <strong>{{destinationName}}</strong> at the moment.</p>
+            <p>Please try a different combination of airports or check back later.</p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-card-content>
+</mat-card>
